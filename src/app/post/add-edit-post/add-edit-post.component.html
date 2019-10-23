@@ -3,7 +3,7 @@
     <form [formGroup]="postForm">
       <div class="form-group">
         <label>Post Id: </label>
-        <input type="text" class="form-control" formControlName="post_id" placeholder="Post Title" name="post_id"
+        <input type="text" class="form-control" formControlName="post_id" placeholder="Post id" name="post_id"
           [(ngModel)]="this.postObject.id" [ngClass]="{ 'is-invalid': submitted && f.post_id.errors }" />
         <div *ngIf="submitted && f.post_id.errors" class="invalid-feedback">
           <div *ngIf="f.post_id.errors.required">Post Title is required</div>
@@ -11,7 +11,7 @@
       </div>
       <div class="form-group">
         <label>User id: </label>
-        <input type="text" class="form-control" formControlName="user_id" placeholder="Post Title" name="user_id"
+        <input type="text" class="form-control" formControlName="user_id" placeholder="User Id" name="user_id"
           [(ngModel)]="this.postObject.userId" [ngClass]="{ 'is-invalid': submitted && f.user_id.errors }" />
         <div *ngIf="submitted && f.user_id.errors" class="invalid-feedback">
           <div *ngIf="f.user_id.errors.required">Post Title is required</div>
@@ -27,7 +27,7 @@
       </div>
       <div class="form-group">
         <label>Post Body: </label>
-        <input type="text" class="form-control" formControlName="post_body" placeholder="Post Title" name="post_body"
+        <input type="text" class="form-control" formControlName="post_body" placeholder="Post Body" name="post_body"
           [(ngModel)]="this.postObject.body" [ngClass]="{ 'is-invalid': submitted && f.post_body.errors }" />
         <div *ngIf="submitted && f.post_body.errors" class="invalid-feedback">
           <div *ngIf="f.post_body.errors.required">Post Body is required</div>
