@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
 import {environment} from '../../environments/environment';
+import { post } from '../models/post';
 
 @Injectable({
   providedIn: 'root'
@@ -19,5 +20,11 @@ export class PostService {
   {
     let url=environment.postURL+post_id;
     return this._http.get(url);
+  }
+
+  public addPost(requestObj:post)
+  {
+    let url=environment.postURL;
+    return this._http.post(url,requestObj);
   }
 }

@@ -24,7 +24,8 @@
   </div>
 </div>
 
-<div bsModal #postModal="bs-modal" id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div bsModal #postModal="bs-modal" id="postModal" class="modal fade" tabindex="-1" role="dialog" 
+aria-labelledby="myModalLabel" aria-hidden="true" [config]="{ignoreBackdropClick: true, keyboard: false}">
   <div class="modal-dialog modal-success" role="document">
     <div class="modal-content">
       <div class="modal-header">

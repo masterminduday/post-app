@@ -49,11 +49,13 @@ export class AddEditPostComponent implements OnInit {
     this.submitted = true;
     if(this.postForm.valid)
     {
-
-    }
-    else
-    {
-
+      this.postService.addPost(this.postObject).subscribe(data=>{
+        if(data)
+        {
+          console.log(data);
+        }
+        alert("Created.");
+      });
     }
   }
 }
