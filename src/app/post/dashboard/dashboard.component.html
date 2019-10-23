@@ -1,0 +1,43 @@
+<div class="card">
+  <div class="card-header">
+    <button class="btn btn-pill btn-primary" type="button" (click)="openAddModal(); postModal.show()"><i class="fa fa-plus-circle fa-lg"></i>&nbsp;Add New Post</button>
+  </div>
+  <div class="card-body">
+      <div class="table-responsive">
+    <table class="table-striped">
+      <tr>
+        <th>Action</th>
+        <th>Post Id</th>
+        <th>User Id</th>
+        <th>Post Title</th>
+        <th>Post Body</th>
+      </tr>
+      <tr *ngFor="let post of postList">
+        <td><span (click)="openModal(post.id); postModal.show()"><i class="fas fa-edit"></i></span></td>
+        <td>{{post.id}}</td>
+        <td>{{post.userId}}</td>
+        <td>{{post.title}}</td>
+        <td>{{post.body}}</td>
+      </tr>
+    </table>
+  </div>
+  </div>
+</div>
+
+<div bsModal #postModal="bs-modal" id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-success" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Add/Edit Post</h4>
+        <button type="button" class="close" id="closemodal" (click)="postModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <template #postcontainer></template>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
